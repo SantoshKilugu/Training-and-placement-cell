@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form</title>
+        <style>
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7yxmdNWOloSQkK0ynsDZGpWwvRQexzTS-Dg&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        form{
+            border-style:solid;
+            padding:20px 10px;
+            margin:120px 450px 150px 450px;
+            text-align:center;
+            border-radius: 20px;
+
+        }
+        .button{
+            background-color: #4CAF50;
+            padding:10px 20px;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin:8px 0px;
+        }
+        .button:hover{
+            background-color:brown;
+        }
+        input[type=text],input[type=password]{
+
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        </style>
+        <script language="JavaScript">
+            function validate()
+            {
+                var un = document.getElementById("un").value;
+                var ps = document.getElementById("ps").value;
+
+                var reg=/^([a-z0-9])+\@+[a-z]+\.+[a-z]/
+
+                if(un==""||reg.test(un)==false){
+                    alert("Mail must not be blank and the pattern is in santosh143@gmail.com");
+                    return false;
+                }
+                if(ps==""||ps.length<=6){
+                    alert("Password must not be blank and atleast 6 characters");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body >
+        <form action="suc2.html" name="form" method="get" onsubmit="return validate()" >
+		    <center><b>Login Form</b><br><br></center>
+            <label>User Name</label><br>
+            <input type="text" id="un" name="Uname" placeholder="Enter E-mail id " ><br>
+            <span id="t1" style="color:red;"></span><br>
+            <label>Password</label><br>
+            <input type="password" id="ps" name="Password" placeholder="Enter Password"><br>
+            <span id="t2" style="color:red;"></span><br>
+            <input type="submit" class="button" value="Login"><br>
+            &nbsp;&nbsp;<b>or</b><br><br><a href="reg2.html">Sign Up</a>
+        </form>
+	 
+    </body>
+</html>

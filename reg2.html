@@ -1,0 +1,141 @@
+<html>
+<head>
+<style>
+    body{
+        border:solid 2px black;
+        border-radius: 20px;
+        margin: 100px 400px 100px 400px;
+        padding:30px;
+    }
+    input[type="submit"],input[type="reset"]{
+        padding:10px 20px;
+        border:solid 2px black;
+        border-radius: 10px;
+        background-color: #c19f18;
+        color:white;
+        cursor: pointer;
+    }
+    input[type="reset"]:hover{
+        background-color: crimson;
+    }
+    input[type="submit"]:hover{
+        background-color: rgb(28, 171, 28);
+    }
+</style>
+<script>
+function validate()
+{
+  var  txtuser=document.getElementById("txtuser").value;
+ var  txtpass=document.getElementById("txtpass").value;
+ var  txtfname=document.getElementById("txtfname").value;
+ var txtmname=document.getElementById("txtmname").value;
+ var  txtjno=document.getElementById("txtjno").value;
+ var  txtdob=document.getElementById("txtdob").value;
+ var  txtpno=document.getElementById("txtpno").value
+ var  txtemail=document.getElementById("txtemail").value;
+var reg=/^([a-z0-9])+\@+[a-z]+\.+[a-z]/
+var jno=/^([0-9a-z])/
+var pno=/^(\d{1})+[0-9]/
+ var  txtadd=document.getElementById("txtadd").value;
+if(txtuser==""||txtuser.length<6)
+{
+alert("username must not be blank and contain atleast 6 characters");
+return false;
+}
+if(txtpass==""||txtpass.length<6)
+{
+alert("password must not be blank and contains atleast 6 characters");
+return false;
+}
+if(txtfname ==""||txtfname.length<6)
+{
+alert("fathername must not be blank and contain atleast 6 characters");
+return false;
+}
+if(txtmname ==""||txtmname.length<6)
+{
+alert("mother name must not be blank and contain atleast 6 characters");
+return false;
+}
+if(jno.test(txtjno)==false)
+{
+alert("jntuno must not be blank");
+return false;
+}
+if(txtdob =="")
+{
+alert("DOB must not be blank");
+return false;
+}
+ if(pno.test(txtpno)==false)
+{
+alert("phonenumber must not be blank and contains atleast 10 digits");
+return false;
+}
+if(reg.test(txtemail)==false)
+{
+alert("mail must not be blank and the pattern is santhosh@gmail.com");
+return false;
+}
+if(txtadd =="")
+{
+alert("address must not be blank");
+return false;
+}
+}    
+</script>
+</head>
+<body style="background-color:lightblue" colspan="2">
+<h3 align="center" > Registration Form</h3>
+<table align="center">
+<form id="registrationform" action="suc.html" method="get" onsubmit="return validate()" >
+ <td>Username</td>
+ <td><input type="text" name=" Username" id="txtuser"></td>
+</tr>
+<tr>
+  <td>Password</td>
+ <td><input type="password" name="psw" id="txtpass" maxlength="30"> </td>
+</tr>
+<tr>
+ <td>Father name</td>
+<td><input type="text" name="name" id="txtfname"></td>
+</tr>
+<tr>
+ <td>Mother name</td>
+<td><input type="text" name="name" id="txtmname"></td>
+</tr>
+<tr>
+ <td>JNTU Number</td>
+<td><input type="text/number" name="name" id="txtjno"></td>
+</tr>
+<tr>
+ <td>Date of Birth</td>
+<td><input type="date" name="name" id="txtdob"></td>
+</tr>
+<tr>
+ <td>Phone Number</td>
+<td><input type="tel" name="name" maxlength="10" id="txtpno" ></td>
+</tr>
+<tr>
+ <td>Email id</td>
+<td><input type="email" name="name" id="txtemail"></td>
+</tr>
+<tr>
+ <td>Gender</td>
+<td><input type="radio" name="subject" value="Male" > Male&nbsp;&nbsp;
+<input type="radio" name="subject" value="Female"> Female&nbsp;&nbsp;
+<input type="radio" name="subject" value="Others"> Others<br>
+</td>
+</tr>
+<tr>
+ <td>Address</td>
+<td><input type="text" name="name" id="txtadd"></td>
+</tr>
+<tr>
+<td><br><input type="submit" name="register" value="Submit"></td>
+<td><br>&nbsp;&nbsp;&nbsp;<input type="reset" value="clear"></td>
+</tr>
+</form>
+</table>
+</body>
+</html>
